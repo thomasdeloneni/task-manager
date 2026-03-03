@@ -4,10 +4,9 @@ WORKDIR /app
 
 COPY . /app/
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt \
+    && adduser --disabled-password --gecos "" appuser
 
-# Crée un user non-root
-RUN adduser --disabled-password --gecos "" appuser
 USER appuser
 
 EXPOSE 8000
