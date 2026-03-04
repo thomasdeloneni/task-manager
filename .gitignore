@@ -10,3 +10,5 @@ backend/.env
 
 # database
 *.db
+
+.ruff_cache/

@@ -31,3 +31,15 @@ repos:
     rev: v1.5.0
     hooks:
       - id: detect-secrets
+
+  - repo: https://github.com/bridgecrewio/checkov
+    rev: '3.2.0'
+    hooks:
+      - id: checkov
+        args: ["--framework", "dockerfile,docker_compose", "--quiet"]
+
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.12.0
+    hooks:
+      - id: hadolint
+        args: ["--ignore", "DL3008"]
