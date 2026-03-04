@@ -5,6 +5,9 @@ on:
     branches: ["**"]
   pull_request:
     branches: ["**"]
+  workflow_run:
+    workflows: ["Pre-commit checks"]
+    types: [completed]
 
 jobs:
   hadolint:
