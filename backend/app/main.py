@@ -10,6 +10,9 @@ from datetime import datetime, timezone
 from .db import Base, engine, get_db
 from .models import Task
 from .schemas import TaskCreate, TaskUpdate, TaskOut
+from dotenv import load_dotenv
+
+load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
 

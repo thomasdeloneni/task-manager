@@ -1,0 +1,14 @@
+---
+
+services:
+  backend:
+    image: ghcr.io/thomasdeloneni/task-manager/backend:latest
+    environment:
+      - API_KEY=${API_KEY}
+    ports:
+      - "8000:8000"
+
+  frontend:
+    image: ghcr.io/thomasdeloneni/task-manager/frontend:latest
+    ports:
+      - "80:80"

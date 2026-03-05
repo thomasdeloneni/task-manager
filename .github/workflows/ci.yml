@@ -58,7 +58,7 @@ jobs:
           soft_fail: false
 
   build-and-scan:
-    needs: [hadolint, checkov]
+    needs: [hadolint, checkov, sonar]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
