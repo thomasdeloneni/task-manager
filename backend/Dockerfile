@@ -6,6 +6,8 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt \
     && adduser --disabled-password --gecos "" appuser
 
+COPY . .
+
 USER appuser
 
 HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
