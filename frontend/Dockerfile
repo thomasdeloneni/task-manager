@@ -12,6 +12,8 @@ RUN mkdir -p /var/cache/nginx/client_temp \
              /var/cache/nginx/uwsgi_temp \
              /var/cache/nginx/scgi_temp \
     && chown -R nginx:nginx /var/cache/nginx \
+    && touch /run/nginx.pid \
+    && chown nginx:nginx /run/nginx.pid \
     && sed -i '/^user /d' /etc/nginx/nginx.conf
 
 USER nginx
